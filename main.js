@@ -1,5 +1,5 @@
 var app = (function () {
-  var artist = "Pokémon";
+  var artist = "Pokévent";
   var currentIndex = 0;
   var zipUrl = ""; // Set to '' if you don't want to allow download of the zip
   const languages = ["fr", "en"];
