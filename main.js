@@ -23159,7 +23159,8 @@ var app = (function () {
           threshold: 1,
           wrapper: !1,
           resultsList: {
-            maxResults: 10,
+            maxResults: 5000,
+            class: "auto-complete-results",
           },
           diacritics: !0,
           noresults: !0,
