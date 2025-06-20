@@ -19395,21 +19395,33 @@ var app = (function () {
       ];
     }
   }
-
+  
+  function clearAndUpdateDOM() {
+    const volumeSlider = document.getElementById("volume-slider");
+    const playerS = document.getElementById("player");
+    const retourS = document.getElementById("retour");
+    document.body.innerHTML = "";
+    document.body.appendChild(volumeSlider.cloneNode(true));
+    document.body.appendChild(playerS.cloneNode(true));
+    document.body.appendChild(retourS.cloneNode(true));
+  }
+  
   function nextMusic() {
     currentIndex += 1;
     if (currentIndex >= filteredMusicListWithLinks.length) {
       window.location.reload();
     } else {
-      document.body.innerHTML = "";
+      clearAndUpdateDOM();
       new (class extends se {
         constructor(e) {
-          super(), re(this, e, jn, En, i, {}, null, [-1, -1]);
+          super();
+          re(this, e, jn, En, i, {}, null, [-1, -1]);
         }
       })({
         target: document.body,
         props: {},
       });
+      quiet();
     }
   }
 
@@ -19447,12 +19459,18 @@ var app = (function () {
     filteredMusicListWithLinks = musicListWithLinks.filter((x) =>
       idMusic.has(x.answer)
     );
+
+    clearAndUpdateDOM();
   }
 
   function changeLanguage(code) {
     language = code;
     document.body.innerHTML = "";
     localStorage.setItem("language", language),
+
+       clearAndUpdateDOM();
+
+    
       new (class extends se {
         constructor(e) {
           super(), re(this, e, jn, En, i, {}, null, [-1, -1]);
@@ -19461,6 +19479,8 @@ var app = (function () {
         target: document.body,
         props: {},
       });
+
+      quiet();
   }
 
   function saveFilteredGames(filteredGames) {
