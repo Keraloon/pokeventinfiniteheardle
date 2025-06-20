@@ -19402,7 +19402,6 @@ var app = (function () {
     document.body.innerHTML = "";
     document.body.appendChild(volumeSlider.cloneNode(true));
     document.body.appendChild(playerS.cloneNode(true));
-    document.body.appendChild(retourS.cloneNode(true));
   }
   
   function nextMusic() {
