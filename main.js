@@ -25850,24 +25850,9 @@ var app = (function () {
         hasFinished: !1,
         hasStarted: !1,
       };
-    // console.log("a", l);
+
     var c, d;
 
-    // EventListener, originnally here to reload the page if the day changed
-    // void 0 !== document.hidden ?
-    //     ((c = "hidden"), (d = "visibilitychange")) :
-    //     void 0 !== document.msHidden ?
-    //     ((c = "msHidden"), (d = "msvisibilitychange")) :
-    //     void 0 !== document.webkitHidden &&
-    //     ((c = "webkitHidden"), (d = "webkitvisibilitychange")),
-    //     void 0 === document.addEventListener ||
-    //     void 0 === c ||
-    //     document.addEventListener(
-    //         d,
-    //         function() {
-    //             document[c] || a === currentIndex || location.reload(!0);
-    //         }, !1
-    //     );
     let h,
       f,
       m = 0;
