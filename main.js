@@ -24013,9 +24013,26 @@ var app = (function () {
       }
     );
   }
+
+  function jt(e, t, n) {
+    let r;
+    return (
+      P(async function () {
+        (async function () {
+          const e = await fetch(
+            "https://wjsn-heardle.glitch.me/supporters.json"
+          );
+          return await e.json();
+        })().then((e) => {
+          n(0, (r = e.supporters));
+        });
+      }),
+      [r]
+    );
+  }
   class Bt extends se {
     constructor(e) {
-      super(), re(this, e, null, Et, i, {});
+      super(), re(this, e, jt, Et, i, {});
     }
   }
 
@@ -24225,7 +24242,6 @@ var app = (function () {
               "class",
               "px-2 py-2 uppercase tracking-widest border-none flex items-center font-semibold text-sm svelte-1r54uzk bg-custom-positive"
             ),
-            M(k, "aria-label", nextAriaT[language]),
             k.addEventListener("click", function () {
               nextMusic();
             });
@@ -24583,7 +24599,6 @@ var app = (function () {
   }
 
   function fn(e, t, n) {
-    // console.log("current", t);
     let { userGuesses: r } = t,
       { currentHeardle: s } = t,
       { config: i } = t,
@@ -24622,7 +24637,7 @@ var app = (function () {
             : (t += "🔇");
           for (let e = 0; e < i.maxAttempts; e++)
             r.length > e
-              ? 1 == r[e].isCorrect
+              ? 1 == r[e].isCorrectgues
                 ? (t += "🟩")
                 : 1 == r[e].isSkipped
                 ? (t += "⬛️")
@@ -25263,7 +25278,6 @@ var app = (function () {
         });
     }
   }
-
   var Pn;
   const { document: An, window: Ln } = X;
 
@@ -25530,6 +25544,7 @@ var app = (function () {
         ? 6
         : -1;
     }
+
     return (
       ~(t = a(e)) && (n = o[t] = i[t](e)),
       {
